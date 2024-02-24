@@ -49,6 +49,29 @@ button {
   outline: none;
 }
 
+.btn {
+  font-weight: 700;
+  display: inline-flex;
+  min-width: 64px;
+  align-items: center;
+  justify-content: center;
+  transition: 0 0.3s;
+  height: 32px;
+  font-size: 1.25rem;
+  background: var(--purple);
+  border: transparent;
+  border-radius: 20px;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.btn:active {
+  background: var(--white);
+  color: var(--purple);
+  border: 1px solid var(--purple);
+  transition: 0s;
+}
+
 .container,
 .container-fluid {
   width: 100%;

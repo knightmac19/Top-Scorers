@@ -1,0 +1,54 @@
+/* hero section */
+.dev-border {
+  border: 1px solid pink;
+}
+.hero {
+  background-color: rgba(211, 211, 211, 0.4);
+  padding: 2rem 0;
+}
+
+.hero .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero .img-wrapper {
+  width: 100px;
+  margin-right: 2rem;
+}
+
+.hero .img-wrapper img {
+  width: 100%;
+}
+
+.hero-left,
+.hero-right {
+  display: flex;
+  align-items: center;
+}
+
+.hero-left h1 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.hero-left h2 {
+  margin-top: 0;
+  padding-top: 0;
+  text-align: center;
+}
+
+label {
+  font-size: 1rem;
+  padding-right: 10px;
+}
+
+select {
+  font-size: 0.9rem;
+  padding: 4px 10px;
+  outline: none;
+  border: 1px solid var(--purple);
+  border-radius: 8px;
+  margin-right: 1rem;
+}
