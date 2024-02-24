@@ -14,12 +14,12 @@
 }
 
 .hero .img-wrapper {
-  width: 100px;
+  min-width: 100px;
   margin-right: 2rem;
 }
 
 .hero .img-wrapper img {
-  width: 100%;
+  min-width: 100%;
 }
 
 .hero-left,

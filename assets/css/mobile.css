@@ -1,0 +1,30 @@
+@media (max-width: 991px) {
+}
+@media (max-width: 820px) {
+  .hero .container {
+    display: block;
+  }
+  .hero-left,
+  .hero-right {
+    display: flex;
+    justify-content: center;
+  }
+  .hero-left {
+    margin-bottom: 1rem;
+  }
+
+  .hero-left .text-wrapper h1,
+  .hero-left .text-wrapper h2 {
+    text-align: left;
+  }
+}
+@media (max-width: 500px) {
+  .hero .img-wrapper {
+    min-width: 90px;
+    margin-right: 2rem;
+  }
+
+  .hero .img-wrapper img {
+    width: 100%;
+  }
+}
