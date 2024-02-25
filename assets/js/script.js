@@ -61,6 +61,7 @@ const createPlayerCard = (player, rank) => {
   // create player card wrapper div
   const playerCardWrapper = document.createElement("div");
   playerCardWrapper.classList.add("player-card-wrapper");
+  playerCardWrapper.setAttribute("id", `${data.rank}`);
 
   // create player card div
   const playerCard = document.createElement("div");
@@ -259,3 +260,53 @@ pageGoalsH3.textContent = totalGoals;
 pageMinutesH3.textContent = totalMinutes;
 
 generateAllPlayerCards(exampleResponse[0].response);
+
+const allPlayerCards = document.querySelectorAll(".player-card-wrapper");
+const sortBtn = document.querySelectorAll(".sort-btn");
+
+const sortPlayerCards = (direction) => {
+  const parentContainer = document.querySelector(".player-cards");
+  const arrayOfItems = Array.from(allPlayerCards);
+
+  const sortDesc = (a, b) => {
+    const firstElId = parseInt(a.id);
+    const secondElId = parseInt(b.id);
+
+    if (firstElId < secondElId) {
+      return 1;
+    } else if (firstElId > secondElId) {
+      return -1;
+    } else {
+      return 0;
+    }
+  };
+  const sortAsc = (a, b) => {
+    const firstElId = parseInt(a.id);
+    const secondElId = parseInt(b.id);
+    if (firstElId > secondElId) {
+      return 1;
+    } else if (firstElId < secondElId) {
+      return -1;
+    } else {
+      return 0;
+    }
+  };
+
+  if (direction === "desc") {
+    arrayOfItems.sort(sortDesc);
+  } else {
+    arrayOfItems.sort(sortAsc);
+  }
+
+  arrayOfItems.forEach((item) => {
+    parentContainer.appendChild(item);
+  });
+};
+
+sortBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const direction = btn.dataset.sort;
+
+    sortPlayerCards(direction);
+  });
+});
