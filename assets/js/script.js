@@ -213,11 +213,49 @@ const createPlayerCard = (player, rank) => {
   return playerCardWrapper;
 };
 
+const getTotalGoals = (arr) => {
+  const goals = arr.map((player) => {
+    return player.statistics[0].goals.total;
+  });
+
+  const totalGoals = goals.reduce((acc, curr) => {
+    return acc + curr;
+  }, 0);
+
+  return totalGoals;
+};
+
+const getTotalMinutes = (arr) => {
+  const minutes = arr.map((player) => {
+    return player.statistics[0].games.minutes;
+  });
+
+  const totalMinutes = minutes.reduce((acc, curr) => {
+    return acc + curr;
+  }, 0);
+
+  return totalMinutes;
+};
+
 const generateAllPlayerCards = (array) => {
   for (let i = 0; i < array.length; i++) {
     let rank = i + 1;
     playerCards.appendChild(createPlayerCard(array[i], rank));
   }
 };
+
+const pageSeasonString = createSeasonString(
+  exampleResponse[0].response[0].statistics[0].league.season.toString()
+);
+
+const totalMinutes = getTotalMinutes(exampleResponse[0].response);
+const totalGoals = getTotalGoals(exampleResponse[0].response);
+
+const pageSeasonH3 = document.querySelector(".page-season");
+const pageGoalsH3 = document.querySelector(".page-goals");
+const pageMinutesH3 = document.querySelector(".page-minutes");
+pageSeasonH3.textContent = pageSeasonString;
+pageGoalsH3.textContent = totalGoals;
+pageMinutesH3.textContent = totalMinutes;
 
 generateAllPlayerCards(exampleResponse[0].response);
