@@ -166,6 +166,21 @@ select {
   flex-wrap: wrap;
 }
 
+.player-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.add-fav-btn {
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 5px 10px;
+}
+
 .player-card {
   width: 330px;
   border-radius: 25px;
