@@ -8,8 +8,8 @@ lerna-debug.log*
 .pnpm-debug.log*
 
 # local files
-assets/js/example.js
-assets/js/res.js
+
+/assets/js
 resources.md
 
 # Diagnostic reports (https://nodejs.org/api/report.html)

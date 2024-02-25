@@ -104,6 +104,7 @@ select {
 .fav-card-top .img-wrapper img {
   width: 100%;
   border-radius: 50%;
+  box-shadow: 0 0 4px 1px var(--purple);
 }
 
 .fav-card-btm {
@@ -217,6 +218,7 @@ select {
 .card-top-left .img-wrapper img {
   width: 100%;
   border-radius: 50%;
+  box-shadow: 0 0 10px 2px var(--purple);
 }
 
 .card-btm {
