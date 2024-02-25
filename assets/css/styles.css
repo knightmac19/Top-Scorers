@@ -80,6 +80,7 @@ select {
   width: 250px;
   border-radius: 12px;
   padding: 5px 10px;
+  box-shadow: 2px 2px 6px 1px var(--purple);
 }
 
 .fav-card-top {
@@ -161,14 +162,14 @@ select {
   padding: 15px;
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
 .player-card {
   width: 330px;
   border-radius: 25px;
-  /* height: 150px; */
+  box-shadow: 2px 2px 6px 1px var(--purple);
 }
 
 .card-top {
