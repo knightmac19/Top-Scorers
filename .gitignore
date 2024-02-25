@@ -9,9 +9,9 @@ lerna-debug.log*
 
 # local files
 
-/assets/js/script.js
+
 /assets/js/example.js
-/assets/js/res.js
+
 resources.md
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
