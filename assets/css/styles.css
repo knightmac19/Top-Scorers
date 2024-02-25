@@ -2,6 +2,9 @@
 .dev-border {
   border: 1px solid pink;
 }
+.contrast-border {
+  border: 1px solid black;
+}
 .hero {
   background-color: rgba(211, 211, 211, 0.4);
   padding: 2rem 0;
@@ -51,4 +54,201 @@ select {
   border: 1px solid var(--purple);
   border-radius: 8px;
   margin-right: 1rem;
+}
+
+.coll-favs-wrapper {
+  display: flex;
+}
+
+/* favorites section */
+
+.coll-favs-wrapper .favorites {
+  max-width: 350px;
+  min-width: 300px;
+  min-height: 100vh;
+  background-color: rgba(56, 0, 60, 0.3);
+}
+
+.favorites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fav-card {
+  background-color: var(--white);
+  width: 250px;
+  border-radius: 12px;
+  padding: 5px 10px;
+}
+
+.fav-card-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fav-card-top h4,
+.fav-card-btm h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.fav-card-top .img-wrapper {
+  width: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.fav-card-top .img-wrapper img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.fav-card-btm {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.fav-card-btm .fav-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fav-card-btm .fav-stat .stat-title {
+  border-bottom: 1px solid gray;
+}
+
+.coll-favs-wrapper .collections {
+  width: 100%;
+}
+
+/* stats section */
+.stats {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.stats-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--purple);
+}
+
+/* sort-section */
+.sort-section {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+
+.sort-btn {
+  padding: 0.5rem 1rem;
+}
+
+/* player cards section */
+
+.player-cards {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.player-card {
+  width: 330px;
+  border-radius: 25px;
+  /* height: 150px; */
+}
+
+.card-top {
+  display: flex;
+  background-color: rgba(211, 211, 211, 0.4);
+  padding: 10px;
+  border-radius: 25px 25px 0 0;
+}
+
+.card-top-left,
+.card-btm-right {
+  width: 64%;
+  display: flex;
+}
+
+.top-left-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-left-text h4,
+.top-left-text h5 {
+  margin: 0;
+  padding: 0;
+}
+
+.card-top-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-top-right h5 {
+  margin: 0;
+  padding: 0;
+}
+
+.card-top-left .img-wrapper {
+  width: 60px;
+  margin-right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-top-left .img-wrapper img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.card-btm {
+  display: flex;
+  padding: 10px;
+  border-radius: 0 0 25px 25px;
+  gap: 3rem;
+}
+
+.card-btm-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-btm-right {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+
+.card-btm-right h5 {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.card-btm-left .img-wrapper {
+  width: 90px;
+}
+
+.card-btm-left .img-wrapper img {
+  width: 100%;
 }
