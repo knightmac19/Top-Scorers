@@ -419,12 +419,47 @@ sortBtn.forEach((btn) => {
   });
 });
 
-favButton.forEach((btn) => {
-  btn.addEventListener("click", async (e) => {
+// favButton.forEach((btn) => {
+//   btn.addEventListener("click", async (e) => {
+//     console.log(playerCards);
+//     let playerId = "0";
+//     let topEl = "";
+
+//     if (e.target.classList[0] === "fas") {
+//       playerId = e.target.parentElement.parentElement.id;
+//       topEl = e.target.parentElement.parentElement;
+//     } else {
+//       playerId = e.target.parentElement.id;
+//       topEl = e.target.parentElement;
+//     }
+
+//     const player = await findPlayer(state.collection, playerId);
+
+//     const newCard = createFavCard(player);
+
+//     // await rmFromCollection(playerId);
+//     favCards.appendChild(newCard);
+
+//     playerCards.removeChild(document.getElementById(playerId));
+
+//     // rmFromArrItems(playerId);
+//     // setPlayerCardsArray();
+
+//     // // re-render the list of players using the collection state
+//     // generateAllPlayerCards(state.collection);
+//   });
+// });
+
+document.body.addEventListener("click", async (e) => {
+  console.log(e.target);
+
+  if (
+    e.target.classList[1] === "add-fav-btn" ||
+    e.target.classList[1] === "fa-plus"
+  ) {
     console.log(playerCards);
     let playerId = "0";
     let topEl = "";
-
     if (e.target.classList[0] === "fas") {
       playerId = e.target.parentElement.parentElement.id;
       topEl = e.target.parentElement.parentElement;
@@ -432,22 +467,16 @@ favButton.forEach((btn) => {
       playerId = e.target.parentElement.id;
       topEl = e.target.parentElement;
     }
-
     const player = await findPlayer(state.collection, playerId);
-
     const newCard = createFavCard(player);
-
     // await rmFromCollection(playerId);
     favCards.appendChild(newCard);
-
     playerCards.removeChild(document.getElementById(playerId));
-
     // rmFromArrItems(playerId);
     // setPlayerCardsArray();
-
     // // re-render the list of players using the collection state
     // generateAllPlayerCards(state.collection);
-  });
+  }
 });
 
 // click listener for times icon:
