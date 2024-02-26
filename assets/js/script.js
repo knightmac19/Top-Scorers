@@ -451,8 +451,6 @@ sortBtn.forEach((btn) => {
 // });
 
 document.body.addEventListener("click", async (e) => {
-  console.log(e.target);
-
   if (
     e.target.classList[1] === "add-fav-btn" ||
     e.target.classList[1] === "fa-plus"
@@ -472,6 +470,7 @@ document.body.addEventListener("click", async (e) => {
     // await rmFromCollection(playerId);
     favCards.appendChild(newCard);
     playerCards.removeChild(document.getElementById(playerId));
+    allPlayerCards = document.querySelectorAll(".player-card-wrapper");
     // rmFromArrItems(playerId);
     // setPlayerCardsArray();
     // // re-render the list of players using the collection state
