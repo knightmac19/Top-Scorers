@@ -7,6 +7,31 @@ const initialCall = async (url, options) => {
     console.error(error);
   }
 };
+
+const getTotalGoals = (arr) => {
+  const goals = arr.map((player) => {
+    return player.statistics[0].goals.total;
+  });
+
+  const totalGoals = goals.reduce((acc, curr) => {
+    return acc + curr;
+  }, 0);
+
+  return totalGoals;
+};
+
+const getTotalMinutes = (arr) => {
+  const minutes = arr.map((player) => {
+    return player.statistics[0].games.minutes;
+  });
+
+  const totalMinutes = minutes.reduce((acc, curr) => {
+    return acc + curr;
+  }, 0);
+
+  return totalMinutes;
+};
+
 const createSeasonString = (yearString) => {
   const nextYear = parseInt(`${yearString[2]}${yearString[3]}`) + 1;
 
@@ -15,7 +40,6 @@ const createSeasonString = (yearString) => {
 
 const state = {
   collection: [],
-  favorites: [],
 };
 
 const initializeState = (array) => {
@@ -82,8 +106,6 @@ const generateAllPlayerCards = (array) => {
 
 const findPlayer = (array, id) => {
   for (let i = 0; i < array.length; i++) {
-    console.log(array[i]);
-    console.log(`check ${array[i].id} vs. ${id}`);
     if (array[i].id == id) {
       return array[i];
     }
@@ -275,8 +297,6 @@ const createStatH6 = (title, value) => {
 };
 
 const createFavCard = (player) => {
-  console.log(player);
-  state.favorites.push(player);
   const favCard = document.createElement("div");
   favCard.classList.add("fav-card");
   favCard.dataset.playerId = player.id;
@@ -331,14 +351,28 @@ const rmFromCollection = (id) => {
 };
 
 generateAllPlayerCards(state.collection);
-const allPlayerCards = document.querySelectorAll(".player-card-wrapper");
+let allPlayerCards = document.querySelectorAll(".player-card-wrapper");
 const sortBtn = document.querySelectorAll(".sort-btn");
 
 const favButton = document.querySelectorAll(".add-fav-btn");
+// const parentContainer = document.querySelector(".player-cards");
+// let arrayOfItems = Array.from(allPlayerCards);
+// console.log(arrayOfItems);
+
+const setPlayerCardsArray = () => {
+  arrayOfItems = Array.from(allPlayerCards);
+};
+
+// const rmFromArrItems = (id) => {
+//   const item = arrayOfItems.findIndex((item) => item.id == id);
+//   return arrayOfItems.splice(item, 1);
+// };
 
 const sortPlayerCards = (direction) => {
   const parentContainer = document.querySelector(".player-cards");
   const arrayOfItems = Array.from(allPlayerCards);
+  // arrayOfItems = [];
+  console.log(arrayOfItems);
 
   const sortDesc = (a, b) => {
     const firstElRank = parseInt(a.dataset.rank);
@@ -377,17 +411,20 @@ const sortPlayerCards = (direction) => {
 
 sortBtn.forEach((btn) => {
   btn.addEventListener("click", (e) => {
+    console.log(state);
     const direction = btn.dataset.sort;
 
     sortPlayerCards(direction);
+    console.log(state);
   });
 });
 
 favButton.forEach((btn) => {
   btn.addEventListener("click", async (e) => {
+    console.log(playerCards);
     let playerId = "0";
     let topEl = "";
-    console.log(e.target);
+
     if (e.target.classList[0] === "fas") {
       playerId = e.target.parentElement.parentElement.id;
       topEl = e.target.parentElement.parentElement;
@@ -396,22 +433,17 @@ favButton.forEach((btn) => {
       topEl = e.target.parentElement;
     }
 
-    console.log(playerId);
-
-    // // console.log(state.collection);
-    // // console.log(playerId);
     const player = await findPlayer(state.collection, playerId);
-
-    // // console.log(player);
 
     const newCard = createFavCard(player);
 
     // await rmFromCollection(playerId);
     favCards.appendChild(newCard);
 
-    console.log(document.getElementById(`${playerId}`));
     playerCards.removeChild(document.getElementById(playerId));
-    // console.log(topEl.classList);
+
+    // rmFromArrItems(playerId);
+    // setPlayerCardsArray();
 
     // // re-render the list of players using the collection state
     // generateAllPlayerCards(state.collection);
@@ -419,6 +451,27 @@ favButton.forEach((btn) => {
 });
 
 // click listener for times icon:
+document.body.addEventListener("click", async (e) => {
+  if (e.target.classList[1] === "fa-times") {
+    const playerId = e.target.parentElement.parentElement.dataset.playerId;
+
+    console.log(findPlayer(state.collection, playerId));
+
+    const player = await findPlayer(state.collection, playerId);
+
+    playerCards.appendChild(createPlayerCard(player));
+    allPlayerCards = document.querySelectorAll(".player-card-wrapper");
+
+    // console.log();
+    favCards.removeChild(
+      document.querySelector(`[data-player-id="${playerId}"]`)
+    );
+    // arrayOfItems.push(createPlayerCard(player));
+    // setPlayerCardsArray();
+    // console.log(state);
+    // sortPlayerCards("asc");
+  }
+});
 // set listener on body
 // if the class of the event is the times, then continue:
 // get the id of the player from the dataset.playerId attribute
