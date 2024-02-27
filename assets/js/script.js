@@ -8,6 +8,8 @@ const initialCall = async (url, options) => {
   }
 };
 
+// initialCall(premScorersUrl, options);
+
 const getTotalGoals = (arr) => {
   const goals = arr.map((player) => {
     return player.statistics[0].goals.total;
@@ -372,7 +374,7 @@ const sortPlayerCards = (direction) => {
   const parentContainer = document.querySelector(".player-cards");
   const arrayOfItems = Array.from(allPlayerCards);
   // arrayOfItems = [];
-  console.log(arrayOfItems);
+  // console.log(arrayOfItems);
 
   const sortDesc = (a, b) => {
     const firstElRank = parseInt(a.dataset.rank);
@@ -411,11 +413,9 @@ const sortPlayerCards = (direction) => {
 
 sortBtn.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    console.log(state);
     const direction = btn.dataset.sort;
 
     sortPlayerCards(direction);
-    console.log(state);
   });
 });
 
