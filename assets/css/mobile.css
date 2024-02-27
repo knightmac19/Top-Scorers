@@ -17,6 +17,30 @@
   .hero-left .text-wrapper h2 {
     text-align: left;
   }
+
+  .coll-favs-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .coll-favs-wrapper .favorites {
+    max-width: initial;
+    min-width: initial;
+    min-height: fit-content;
+    padding: 1rem 1rem 2rem 1rem;
+  }
+  .favorites {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .favorites .my-own-row {
+    width: 100%;
+    text-align: center;
+  }
 }
 @media (max-width: 500px) {
   .hero .img-wrapper {

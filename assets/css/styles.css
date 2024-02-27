@@ -172,10 +172,6 @@ select {
 
 /* player cards section */
 
-.vanish {
-  display: none;
-}
-
 .player-cards {
   padding: 15px;
   display: flex;
