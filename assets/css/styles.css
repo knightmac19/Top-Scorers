@@ -96,7 +96,7 @@ select {
 
 .fav-card-top {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
 }
@@ -215,6 +215,7 @@ select {
   background-color: rgba(211, 211, 211, 0.4);
   padding: 10px;
   border-radius: 25px 25px 0 0;
+  height: 110px;
 }
 
 .card-top-left,
@@ -226,6 +227,7 @@ select {
 .top-left-text {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .top-left-text h4,
