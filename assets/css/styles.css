@@ -1,3 +1,12 @@
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 3.5rem;
+}
+
 /* hero section */
 .dev-border {
   border: 1px solid pink;
@@ -285,4 +294,28 @@ select {
 
 .card-btm-left .img-wrapper img {
   width: 100%;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3.5rem;
+  color: var(--white);
+  background-color: var(--purple);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+}
+
+footer i {
+  color: var(--white);
+  border-radius: 50%;
+}
+
+footer i:hover {
+  background-color: var(--white);
+  color: var(--purple);
 }
