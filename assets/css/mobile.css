@@ -68,3 +68,16 @@
     gap: 0.75rem;
   }
 }
+@media (max-width: 335px) {
+  .player-card {
+    width: 95vw;
+  }
+  .player-card .card-top {
+    padding: 5px;
+  }
+
+  .player-card .card-top-left,
+  .player-card .card-btm-right {
+    width: 75%;
+  }
+}
