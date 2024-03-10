@@ -23,6 +23,8 @@
 - [Contributors](#contributors)
 - [License](#license)
 
+![Screenshot](./top_scorers.png)
+
 ## <a id="description"></a> Description
 
 [Contents](#contents)  
